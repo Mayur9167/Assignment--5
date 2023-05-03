@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
-export const apilink = "https://backend-r9jx60lkn-mayur9167.vercel.app"
+export const apilink = "https://backend-five-fawn.vercel.app"
 
 function CrudDetails(props) {
 	const [crud, setCrud] = useState({});
