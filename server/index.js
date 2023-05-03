@@ -5,7 +5,6 @@ const connection = require("./db");
 const crudRoutes = require("./routes/crudRoutes");
 
 const app = express();
-const PORT = 5000;
 
 // database connection
 connection();
@@ -24,4 +23,5 @@ app.use("/api/cruds", crudRoutes);
 //app.use("/api/auth", authRoute);
 
 // listening on port
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
