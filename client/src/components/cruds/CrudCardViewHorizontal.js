@@ -9,7 +9,7 @@ function CrudCardViewHorizontal() {
 	useEffect(function () {
 		async function getCruds() {
 			try {
-				const response = await axios.get(`${apilink}/api/cruds`);
+				const response = await axios.get(`${apilink}/api/cruds`, { timeout: 5000 });
 				setCruds(response.data);
 			} catch (error) {
 				console.log("error", error);

@@ -13,7 +13,7 @@ function CrudDetails(props) {
 		function () {
 			async function getCrudById() {
 				try {
-					const response = await axios.get(`${apilink}/api/cruds/${_id}`);
+					const response = await axios.get(`${apilink}/api/cruds/${_id}`, { timeout: 5000 });
 					setCrud(response.data);
 				} catch (error) {
 					console.log("error", error);

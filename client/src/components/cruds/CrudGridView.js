@@ -9,7 +9,7 @@ function CrudGridView() {
 	useEffect(function () {
 		async function getCruds() {
 			try {
-				const response = await axios.get(`${apilink}/api/cruds`);
+				const response = await axios.get(`${apilink}/api/cruds`, { timeout: 5000 });
 				// const response = await axios.get("https://assignment-5-j8vh.vercel.app/api/cruds");
 				setCruds(response.data);
 			} catch (error) {
