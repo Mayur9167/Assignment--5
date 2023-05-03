@@ -17,10 +17,10 @@ function Home() {
 				<b>Database</b>: MongoDB Atlas with Mongoose ODM
 			</p>
 			<p>
-				<b>Developed By</b>: Henok R. Bedassa
+				<b>Developed By</b>: Mayuresh Chodankar
 				<p>
 					<a href={link} target={target}>
-						henok.us
+						https://assignment-5-hbi2av1jc-mayur9167.vercel.app
 					</a>
 				</p>
 			</p>
