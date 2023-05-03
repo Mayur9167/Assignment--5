@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { apilink } from "./CrudDetails";
 
 function CrudGridView() {
 	const [cruds, setCruds] = useState([]);
@@ -8,7 +9,8 @@ function CrudGridView() {
 	useEffect(function () {
 		async function getCruds() {
 			try {
-				const response = await axios.get("https://assignment-5-j8vh.vercel.app/api/cruds");
+				const response = await axios.get(`${apilink}/api/cruds`);
+				// const response = await axios.get("https://assignment-5-j8vh.vercel.app/api/cruds");
 				setCruds(response.data);
 			} catch (error) {
 				console.log("error", error);
