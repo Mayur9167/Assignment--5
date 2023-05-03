@@ -60,20 +60,20 @@ function CrudAdd(props) {
 					<input
 						name="phone"
 						type="tel"
-						pattern="(91)-[0-9]{4}-[0-9]{6}"
+						pattern="(251)-[0-9]{3}-[0-9]{6}"
 						required
 						value={crud.phone}
 						onChange={handleChange}
 						className="form-control"
 					/>
-					<small>Format: 91-XXXX-XXXXXX</small>
+					<small>Format: 251-XXXX-XXXXXX</small>
 				</div>
 				<div className="form-group">
 					<label>Email</label>
 					<input
 						name="email"
 						type="email"
-						pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
+						pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
 						required
 						value={crud.email}
 						onChange={handleChange}
