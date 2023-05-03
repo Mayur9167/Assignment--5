@@ -66,7 +66,7 @@ function CrudAdd(props) {
 						onChange={handleChange}
 						className="form-control"
 					/>
-					<small>Format: 251-XXX-XXXXXX</small>
+					<small>Format: 251-XXXX-XXXXXX</small>
 				</div>
 				<div className="form-group">
 					<label>Email</label>
@@ -100,7 +100,7 @@ function CrudAdd(props) {
 						onChange={handleChange}
 						className="form-control"
 					/>
-					<small>Format: https://yourlink.ext</small>
+					<small>Format: https://yourlink.com</small>
 				</div>
 
 				<div className="form-group">

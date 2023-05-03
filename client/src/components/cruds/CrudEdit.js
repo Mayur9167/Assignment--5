@@ -22,7 +22,7 @@ function CrudEdit(props) {
 		function () {
 			async function updateCrud() {
 				try {
-					const response = await get(`${apilink}/api/cruds/${_id}`);
+					const response = await get(`${apilink}/api/cruds/${_id}`, { timeout: 5000 });
 					setCrud(response.data);
 				} catch (error) {
 					console.log(error);

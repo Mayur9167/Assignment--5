@@ -1,12 +1,11 @@
 {
-	"name": "client MERN CRUD",
-	"author": "Henok R. Bedassa",
-	"web": "henok.us",
-	"email": "jackbalageru@yahoo.com",
+	"name": "mern_stack",
+	"author": "Mayuresh",
+	"email": "chodankarmayur1@gmail.com",
 	"version": "0.1.0",
 	"private": true,
 	"homepage": ".",
-	"main": "index.js",
+	"main": "App.js",
 	"proxy": "https://mern-crud-node-api.vercel.app",
 	"dependencies": {
 		"@nkalpak/react-ios-pwa-prompt": "^1.8.7",
