@@ -10,7 +10,6 @@ import CrudGridView from "./components/cruds/CrudGridView";
 import CrudDetails from "./components/cruds/CrudDetails";
 import CrudEdit from "./components/cruds/CrudEdit";
 import CrudDelete from "./components/cruds/CrudDelete";
-import Footer from "./components/common/Footer";
 
 function App() {
 	return (
@@ -29,7 +28,6 @@ function App() {
 					<Route exact path="/cruds/:_id/edit" element={<CrudEdit />} />
 					<Route exact path="/cruds/:_id/delete" element={<CrudDelete />} />
 				</Routes>
-				<Footer />
 			</Router>
 		</div>
 	);
