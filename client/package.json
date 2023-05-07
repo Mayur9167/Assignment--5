@@ -3,7 +3,6 @@
 	"author": "Mayuresh",
 	"email": "chodankarmayur1@gmail.com",
 	"version": "0.1.0",
-	"private": true,
 	"homepage": ".",
 	"main": "App.js",
 	"proxy": "https://mern-crud-node-api.vercel.app",
