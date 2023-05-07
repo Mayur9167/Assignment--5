@@ -6,7 +6,7 @@ import { apilink } from "./CrudDetails";
 function CrudListView() {
 	const [cruds, setCruds] = useState([]);
 
-	useEffect(() => {
+	useEffect(function () {
 		async function getCruds() {
 			try {
 				const response = await axios.get(`${apilink}/api/cruds`, { timeout: 5000 });
@@ -39,10 +39,11 @@ function CrudListView() {
 					>
 						<div className="row g-0">
 							<div className="col-md-4 pl-5 ">
+								{/* <img src="..." className="img-fluid rounded-start" alt="..."> */}
 								<h5>Logo</h5>
 							</div>
 							<div className="col-md-8">
-								<div className="card-header">
+								<div class="card-header">
 									<h5 className="card-title">
 										<Link to={`/cruds/${crud._id}`} className="link-line">
 											{crud.companyName}
@@ -67,25 +68,20 @@ function CrudListView() {
 										</small>
 									</p>
 
-									<div className="card-footer">
+									<div class="card-footer">
 										<Link
 											to={`/cruds/${crud._id}/edit`}
-											className="btn btn-primary me-2"
+											className="btn btn-primary"
 										>
 											Edit
 										</Link>
-										<Link
-											to={`/cruds/${crud._id}`}
-											className="btn btn-secondary me-2"
-										>
-											Read More
-										</Link>
-										<button
-											onClick={() => handleDelete(crud._id)}
-											className="btn btn-danger"
-										>
-											Delete
-										</button>
+										<span>
+											<small>
+												<Link to={`/cruds/${crud._id}`} className="link-line">
+													Read More...
+												</Link>
+											</small>
+										</span>
 									</div>
 								</div>
 							</div>
@@ -95,15 +91,6 @@ function CrudListView() {
 			})}
 		</div>
 	);
-
-	async function handleDelete(id) {
-		try {
-			await axios.delete('https://backend-five-fawn.vercel.app/api/cruds/${id}', { timeout: 5000 });
-			setCruds((prevCruds) => prevCruds.filter((crud) => crud._id !== id));
-		} catch (error) {
-			console.error(error);
-		}
-	}
 }
 
 export default CrudListView;

@@ -24,7 +24,7 @@ function CrudDetails(props) {
 
 	async function handleDelete() {
 		try {
-			await axios.delete(`/api/cruds/${_id}`, { timeout: 5000 });
+			await axios.delete('https://backend-five-fawn.vercel.app/api/cruds/${_id}', { timeout: 5000 });
 			navigate("/cruds");
 		} catch (error) {
 			console.error(error);
