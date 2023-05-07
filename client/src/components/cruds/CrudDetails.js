@@ -27,7 +27,7 @@ function CrudDetails(props) {
 
 	async function handleDelete() {
 		try {
-			await axios.delete(`${apilink}/api/cruds/${_id}`);
+			await axios.delete("/api/cruds/${_id}", { timeout: 5000 });
 			navigate("/cruds");
 		} catch (error) {
 			console.error(error);

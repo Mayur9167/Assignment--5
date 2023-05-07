@@ -38,7 +38,7 @@ function CrudEdit(props) {
 		event.preventDefault();
 		async function updateCrud() {
 			try {
-				await patch(`${apilink}/api/cruds/${crud._id}`, crud);
+				await patch(`${apilink}/api/cruds/${crud._id}, crud`, { timeout: 5000 });
 				navigate(`/cruds/${crud._id}`);
 			} catch (error) {
 				console.log(error);

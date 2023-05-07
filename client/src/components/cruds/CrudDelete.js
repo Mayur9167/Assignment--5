@@ -11,7 +11,7 @@ function CrudDelete() {
   useEffect(() => {
     async function deleteCrudById() {
       try {
-        const response = await axios.get(`${apilink}/api/cruds/${_id}`);
+        const response = await axios.get(`${apilink}/api/cruds/${_id}`, { timeout: 5000 });
         setCrud(response.data);
       } catch (error) {
         console.log("error", error);
@@ -22,7 +22,7 @@ function CrudDelete() {
 
   async function handleDelete() {
     try {
-      await axios.delete(`${apilink}/api/cruds/${_id}`);
+      await axios.delete(`${apilink}/api/cruds/${_id}`, { timeout: 5000 });
       navigate("/cruds");
     } catch (error) {
       console.error(error);
