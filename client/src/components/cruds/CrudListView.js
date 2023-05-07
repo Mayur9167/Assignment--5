@@ -98,7 +98,7 @@ function CrudListView() {
 
 	async function handleDelete(id) {
 		try {
-			await axios.delete(`${apilink}/api/cruds/${id}`, { timeout: 5000 });
+			await axios.delete('https://backend-five-fawn.vercel.app/api/cruds/${id}', { timeout: 5000 });
 			setCruds((prevCruds) => prevCruds.filter((crud) => crud._id !== id));
 		} catch (error) {
 			console.error(error);
