@@ -5,7 +5,7 @@
 	"version": "0.1.0",
 	"homepage": ".",
 	"main": "App.js",
-	"proxy": "https://mern-crud-node-api.vercel.app",
+	"proxy": "https://backend-five-fawn.vercel.app",
 	"dependencies": {
 		"@nkalpak/react-ios-pwa-prompt": "^1.8.7",
 		"@testing-library/jest-dom": "^5.16.2",
