@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { get, patch } from "axios";
+import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { apilink } from "./CrudDetails";
 
