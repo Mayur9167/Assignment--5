@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import Footer from "../common/Footer";
 export const apilink = "https://backend-five-fawn.vercel.app"
 
 function CrudDetails(props) {
@@ -71,6 +72,7 @@ function CrudDetails(props) {
 				</Link>
 			</div>
 			<hr />
+			<Footer />
 		</div>
 	);
 }

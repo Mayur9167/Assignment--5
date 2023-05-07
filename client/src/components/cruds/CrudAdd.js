@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { post } from "axios";
 import { useNavigate } from "react-router-dom";
 import { apilink } from "./CrudDetails";
+import Footer from "../common/Footer";
 
 function CrudAdd(props) {
 	const initialState = {
@@ -114,7 +115,7 @@ function CrudAdd(props) {
 					/>
 				</div>
 
-				<div className="btn-group">
+				<div className="btn-group mt-4 ">
 					<input type="submit" value="Submit" className="btn btn-primary" />
 					<button
 						type="button"
@@ -125,6 +126,7 @@ function CrudAdd(props) {
 					</button>
 				</div>
 			</form>
+			<Footer />
 		</div>
 	);
 }

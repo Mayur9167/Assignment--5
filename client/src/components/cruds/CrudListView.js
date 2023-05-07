@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { apilink } from "./CrudDetails";
+import Footer from "../common/Footer";
 
 function CrudListView() {
 	const [cruds, setCruds] = useState([]);
@@ -38,11 +39,7 @@ function CrudListView() {
 						key={crud._id}
 					>
 						<div className="row g-0">
-							<div className="col-md-4 pl-5 ">
-								{/* <img src="..." className="img-fluid rounded-start" alt="..."> */}
-								<h5>Logo</h5>
-							</div>
-							<div className="col-md-8">
+							<div className="col-md-12">
 								<div class="card-header">
 									<h5 className="card-title">
 										<Link to={`/cruds/${crud._id}`} className="link-line">
@@ -77,7 +74,7 @@ function CrudListView() {
 										</Link>
 										<span>
 											<small>
-												<Link to={`/cruds/${crud._id}`} className="link-line">
+												<Link to={`/cruds/${crud._id}`} className="link-line m-2">
 													Read More...
 												</Link>
 											</small>
@@ -89,6 +86,7 @@ function CrudListView() {
 					</div>
 				);
 			})}
+			<Footer />
 		</div>
 	);
 }
