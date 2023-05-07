@@ -34,18 +34,16 @@ function CrudEdit(props) {
 		[props]
 	);
 
-	function handleSubmit(event) {
+	async function handleSubmit(event) {
 		event.preventDefault();
-		async function updateCrud() {
-			try {
-				await patch(`${apilink}/api/cruds/${crud._id}, crud`, { timeout: 5000 });
-				navigate(`/cruds/${crud._id}`);
-			} catch (error) {
-				console.log(error);
-			}
+		try {
+			await axios.patch(`${apilink}/api/cruds/${crud._id}`, crud);
+			navigate(`/cruds/${crud._id}`);
+		} catch (error) {
+			console.log(error);
 		}
-		updateCrud();
 	}
+	
 
 	function handleChange(event) {
 		setCrud({ ...crud, [event.target.name]: event.target.value });

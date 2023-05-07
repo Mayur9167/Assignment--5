@@ -9,25 +9,22 @@ function CrudDetails(props) {
 	const { _id } = useParams();
 	const navigate = useNavigate();
 
-	useEffect(
-		function () {
-			async function getCrudById() {
-				try {
-					const response = await axios.get(`${apilink}/api/cruds/${_id}`, { timeout: 5000 });
-					setCrud(response.data);
-				} catch (error) {
-					console.log("error", error);
-				}
-			}
-			getCrudById();
-		},
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-		[props]
-	);
+	useEffect(function () {
+		async function getCrudById() {
+		  try {
+			const response = await axios.get(`${apilink}/api/cruds/${_id}`, { timeout: 5000 });
+			setCrud(response.data);
+		  } catch (error) {
+			console.log("error", error);
+		  }
+		}
+		getCrudById();
+	  }, [_id]);
+	  
 
 	async function handleDelete() {
 		try {
-			await axios.delete("/api/cruds/${_id}", { timeout: 5000 });
+			await axios.delete(`/api/cruds/${_id}`, { timeout: 5000 });
 			navigate("/cruds");
 		} catch (error) {
 			console.error(error);

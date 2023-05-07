@@ -6,7 +6,7 @@ import { apilink } from "./CrudDetails";
 function CrudListView() {
 	const [cruds, setCruds] = useState([]);
 
-	useEffect(function () {
+	useEffect(() => {
 		async function getCruds() {
 			try {
 				const response = await axios.get(`${apilink}/api/cruds`, { timeout: 5000 });
@@ -39,11 +39,10 @@ function CrudListView() {
 					>
 						<div className="row g-0">
 							<div className="col-md-4 pl-5 ">
-								{/* <img src="..." className="img-fluid rounded-start" alt="..."> */}
 								<h5>Logo</h5>
 							</div>
 							<div className="col-md-8">
-								<div class="card-header">
+								<div className="card-header">
 									<h5 className="card-title">
 										<Link to={`/cruds/${crud._id}`} className="link-line">
 											{crud.companyName}
@@ -68,20 +67,25 @@ function CrudListView() {
 										</small>
 									</p>
 
-									<div class="card-footer">
+									<div className="card-footer">
 										<Link
 											to={`/cruds/${crud._id}/edit`}
-											className="btn btn-primary"
+											className="btn btn-primary me-2"
 										>
 											Edit
 										</Link>
-										<span>
-											<small>
-												<Link to={`/cruds/${crud._id}`} className="link-line">
-													Read More...
-												</Link>
-											</small>
-										</span>
+										<Link
+											to={`/cruds/${crud._id}`}
+											className="btn btn-secondary me-2"
+										>
+											Read More
+										</Link>
+										<button
+											onClick={() => handleDelete(crud._id)}
+											className="btn btn-danger"
+										>
+											Delete
+										</button>
 									</div>
 								</div>
 							</div>
@@ -91,6 +95,15 @@ function CrudListView() {
 			})}
 		</div>
 	);
+
+	async function handleDelete(id) {
+		try {
+			await axios.delete(`${apilink}/api/cruds/${id}`, { timeout: 5000 });
+			setCruds((prevCruds) => prevCruds.filter((crud) => crud._id !== id));
+		} catch (error) {
+			console.error(error);
+		}
+	}
 }
 
 export default CrudListView;
