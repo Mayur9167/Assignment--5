@@ -10,3 +10,10 @@ services:
     build: server/.
     ports:
       - 5000:5000
+    environment:
+      - MONGODB_URI=mongodb+srv://mca2266:JP92yPa8ziXPOWLm@cluster0.jqb6u8g.mongodb.net/?retryWrites=true&w=majority
+
+  db:
+    image: mongo
+    ports:
+      - 27017:27017
