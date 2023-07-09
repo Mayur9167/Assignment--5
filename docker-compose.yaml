@@ -5,15 +5,25 @@ services:
     build: client/.
     ports:
       - 8000:8000
+    networks:
+      - crud
 
   be:
     build: server/.
     ports:
       - 5000:5000
     environment:
-      - MONGODB_URI=mongodb+srv://mca2266:JP92yPa8ziXPOWLm@cluster0.jqb6u8g.mongodb.net/?retryWrites=true&w=majority
+      - MONGODB_URI=mongodb://mongo:27017
+    networks:
+      - crud
 
   db:
     image: mongo
+    hostname: mongo
     ports:
       - 27017:27017
+    networks:
+      - crud
+
+networks:
+  crud:
